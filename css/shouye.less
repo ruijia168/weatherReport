@@ -1,0 +1,263 @@
+@font-face {
+    font-family: 'iconfont';  /* Project id 3323366 */
+    src: url('https://at.alicdn.com/t/font_3323366_4johrq4yydj.woff2?t=1649909241271') format('woff2'),
+         url('https://at.alicdn.com/t/font_3323366_4johrq4yydj.woff?t=1649909241271') format('woff'),
+         url('https://at.alicdn.com/t/font_3323366_4johrq4yydj.ttf?t=1649909241271') format('truetype');
+  }
+
+  .Locate {
+    font-family: "iconfont" !important;
+    font-size: 25px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(186, 222, 243);
+    overflow-x: hidden;
+  }
+  .wrapper-one {
+    position: relative;
+    text-align: center;
+  }
+  .top {
+     margin-top: 20px;
+    height: 8vh;
+  }
+  /* .back{
+    font-family: "iconfont" !important;
+    position: absolute;
+    top:10px ;
+    font-size: 22px;
+    left: 17px;
+  } */
+  //首页
+  .core{
+    transition: .2s linear; 
+    height: 80vh;
+    //等下来改
+    // display: none;
+  }
+  .searchbox{
+    position: relative;
+    top: 45%;
+    .search{
+        height: 4vh;
+        width: 79vw;
+        border: 3px solid rgb(192, 192, 192);
+        border-radius: 25px;
+        padding-left: 11px;
+        font-size: 16px;
+        transition: .3s;
+    }
+    .record{
+        position: absolute;
+    width: 80%;
+    background-color: white;
+    border-radius: 8PX;
+    left:33px;
+    top: 5.6vh;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 16%);
+    display: none;
+     .record-ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        
+        div{
+            position: relative;
+            left: -9px;
+            background-color: white;
+            font-size: 17PX;
+            text-align: start;
+            display:flex;
+            justify-content: space-between;
+            text-align: center;
+            box-sizing: border-box;
+            .cha{
+                font-family: "iconfont" !important;
+            }
+        }
+     }
+    }
+    .mic{
+        font-family: "iconfont" !important;
+        position: absolute;
+        right: 11%;
+        top: 19%;
+        font-size: 22px;
+        color: rgb(192, 192, 192);
+      }
+  }
+  
+  .bottom{
+      display: flex;
+      justify-content: space-around;
+      width: 100vw;
+      height: 9vh;
+      margin: -12px 0;
+      .icon-weather{
+        font-family: "iconfont" !important;
+        font-size: 29px;
+        
+      }
+  }
+  .nav-1{
+      transition: .3s;
+  }
+  .nav-2{
+      .nav-1()
+  }
+  .nav-3{
+    .nav-1()
+}
+  //副业
+  .core-two{
+      transition: .1s linear;
+      display: flex;
+      width: 300vw;
+      height: 80vh;
+      display: none;
+      //换页面
+    //   transform: translateX(-66.6%);
+    .section-one{
+        position: relative;
+        width: 100vw;
+        height: 80vh;
+        .list{
+            display: flex;
+            height: 56vh;
+            width: 100vw;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 75px;
+            .weather-list{
+                border-bottom:2px solid rgb(201, 202, 203) ;
+                width: 90vw;
+                height: 7vh;
+                text-align: left;
+                padding: 13px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .return{
+            position:absolute;
+            top: -44px;
+            left: 16px;
+            font-family: "iconfont" !important;
+            font-size: 26px;
+        }
+    }
+    .section-two{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        width: 100vw;
+        height: 80vh;
+        .temperture{
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        .weather-case{
+            font-size: 30px;
+            margin-top: -17px;
+            margin-bottom: 5px;
+        }
+        .wind{
+            margin-bottom: 50px;
+        }
+        .activity{
+            width: 80vw;
+            text-align: center;
+            padding-left: 34px;
+        }
+        .return{
+            position:absolute;
+            top: -44px;
+            left: 16px;
+            font-family: "iconfont" !important;
+            font-size: 26px;
+        }
+    }
+    .section-three{
+        display: flex;
+        width: 100vw;
+        height: 80vh;
+        padding: 91px 0;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        position: relative;
+        #box{
+            width: 50vw;
+            height: 26vh;
+            // background-color: #fff;
+            box-sizing: border-box;
+        }
+        .left-top{
+            border:2px solid rgb(192, 192, 192);
+            border-left: none;
+        }
+        .right-top{
+            border:2px solid rgb(192, 192, 192);
+            border-left: none;
+            border-right: none;
+        }
+        .left-bottom{
+            border:2px solid rgb(192, 192, 192);
+            border-left: none;
+           
+            border-top: none;
+        }  
+        .right-bottom{
+            border:2px solid rgb(192, 192, 192);
+            border-right: none;
+            border-top: none;
+            border-left: none;
+        }
+        .head{
+            margin: 2.5Vh 0vh;
+        }
+        .body{
+            font-size: 14PX;
+            line-height: 18PX;
+        }
+        .icon{
+            width: 48VW;
+            position: relative;
+            top: 27px;
+           
+        }
+        .iconfont1{
+            font-family: "iconfont" !important;
+            font-size: 45PX;
+            color: rgb(168, 215, 225);
+        }
+        .iconfont2{
+            font-family: "iconfont" !important;
+            font-size: 45PX;
+            color: rgb(163, 174, 224);
+        }
+        .iconfont3{
+            font-family: "iconfont" !important;
+            font-size: 45PX;
+            color: rgb(225, 171, 201);
+        }
+        .iconfont4{
+            font-family: "iconfont" !important;
+            font-size: 45PX;
+            color: rgb(168, 164, 150);
+        }
+        .return{
+            position:absolute;
+            top: -44px;
+            left: 16px;
+            font-family: "iconfont" !important;
+            font-size: 26px;
+        }
+    }
+  }
