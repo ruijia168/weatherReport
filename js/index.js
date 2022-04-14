@@ -34,7 +34,7 @@ window.onload = () => {
   const fun = async () => {
     try {
       const res = await Ajax(
-        "get",`https://www.yiketianqi.com/free/week?unescape=1&appid=47723811&appsecret=1uukMcbX&city=${value}`
+        "get",`https://www.yiketianqi.com/free/week?unescape=1&appid=42361885&appsecret=fytXTfe5&city=${value}`
       );
       for (let i = 0; i < 7; i++) {
         day[i].innerHTML = res.data[i].date;
@@ -51,7 +51,7 @@ window.onload = () => {
     try {
       const res = await Ajax(
         "get",
-        `https://yiketianqi.com/api?unescape=1&version=v6&appid=47723811&appsecret=1uukMcbX&city=${value}`
+        `https://yiketianqi.com/api?unescape=1&version=v6&appid=42361885&appsecret=fytXTfe5&city=${value}`
       );
       document.getElementsByClassName("temperture")[0].innerHTML =
         res.tem + "℃";
@@ -67,7 +67,7 @@ window.onload = () => {
     try {
       const res = await Ajax(
         "get",
-        `https://yiketianqi.com/api?unescape=1&version=v1&appid=47723811&appsecret=1uukMcbX&city=${value}`
+        `https://yiketianqi.com/api?unescape=1&version=v1&appid=42361885&appsecret=fytXTfe5&city=${value}`
       );
       for (let i = 0; i < 4; i++) {
         document.getElementsByClassName("head")[i].innerHTML =
@@ -128,6 +128,7 @@ window.onload = () => {
     document.getElementsByClassName("current-place")[0].innerHTML = value;
     coreTwo.style.display = "flex";
     core.style.display = "none";
+    input.value = ''
     //细看引号嵌套
     coreTwo.style.transform = "translateX(-" + 33.3 + "%)";
     nav2.style.color = "rgb(255, 165, 47)";
@@ -141,13 +142,21 @@ window.onload = () => {
     const div = document.createElement("div");
     ul.appendChild(div);
     div.innerHTML =
-      `<div id ='newvalue'>${value}</div>` +
+      `<div class ='newvalue'>${value}</div>` +
       "<div class = 'cha'>&#xe6d5;</div>";
     let newVlaue = document.getElementsByClassName("newvalue")
+    let cha = document.getElementsByClassName('cha')
+     let m = newVlaue.length
     //箭头函数this指向window
-    for(let i= 0 ;i<newVlaue.length ;i++){
+    for(let i= 0 ;i<m ;i++){
+      cha[i].onclick = function(){
+        console.log(this);
+        let td = this.parentNode
+        td.parentNode.removeChild(div)
+      }
     newVlaue[i].onclick = function()  {
       value = this.innerHTML;
+      console.log(value )
       document.getElementsByClassName("current-place")[0].innerHTML = value;
       coreTwo.style.display = "flex";
       core.style.display = "none";
