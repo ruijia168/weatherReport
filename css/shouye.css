@@ -63,7 +63,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 }
-.searchbox .record .record-ul div {
+.searchbox .record .record-ul li {
   position: relative;
   left: -9px;
   background-color: white;
@@ -73,8 +73,9 @@ body {
   justify-content: space-between;
   text-align: center;
   box-sizing: border-box;
+  transition: 0.3s;
 }
-.searchbox .record .record-ul div .cha {
+.searchbox .record .record-ul li .cha {
   font-family: "iconfont" !important;
 }
 .searchbox .mic {

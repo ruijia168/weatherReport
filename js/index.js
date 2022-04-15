@@ -139,20 +139,24 @@ window.onload = () => {
     input.onclick = () => {
       document.getElementsByClassName("record")[0].style.display = "block";
     };
-    const div = document.createElement("div");
-    ul.appendChild(div);
-    div.innerHTML =
+    const li = document.createElement("li");
+    ul.appendChild(li);
+    li.innerHTML =
       `<div class ='newvalue'>${value}</div>` +
       "<div class = 'cha'>&#xe6d5;</div>";
     let newVlaue = document.getElementsByClassName("newvalue")
     let cha = document.getElementsByClassName('cha')
-     let m = newVlaue.length
+     
     //箭头函数this指向window
-    for(let i= 0 ;i<m ;i++){
+    let rul = document.getElementsByClassName('record-ul')[0]
+    let rli = document.getElementsByTagName('li')
+   setInterval(() => {
+    for(let i= 0 ;i<rli.length ;i++){
       cha[i].onclick = function(){
-        console.log(this);
-        let td = this.parentNode
-        td.parentNode.removeChild(div)
+        rul.removeChild(rli[i])
+        if (rli[0] == undefined) {
+          document.getElementsByClassName("record")[0].style.display = "none";
+      }
       }
     newVlaue[i].onclick = function()  {
       value = this.innerHTML;
@@ -166,7 +170,9 @@ window.onload = () => {
       nav1.style.color = "black";
       nav3.style.color = "black";
       document.getElementsByClassName("record")[0].style.display = "none";
+     
       fun2();
     };}
+   }, 300);
   };
 };
