@@ -1,4 +1,5 @@
 window.onload = () => {
+ 
   const input = document.getElementsByTagName("input")[0];
   const mic = document.getElementsByClassName("mic")[0];
   const nav1 = document.getElementsByClassName("nav-1")[0];
@@ -7,7 +8,9 @@ window.onload = () => {
   const toBack = document.getElementsByClassName("return");
   const coreTwo = document.getElementsByClassName("core-two")[0];
   const core = document.getElementsByClassName("core")[0];
-  let value = "重庆";
+  let value;
+  
+  let res2
   const ul = document.getElementsByClassName("record-ul")[0];
   const weatherList = document.getElementsByClassName("weather-list");
   // const word = document.getElementsByClassName('word')
@@ -58,6 +61,8 @@ window.onload = () => {
       document.getElementsByClassName("weather-case")[0].innerHTML = res.wea;
       document.getElementsByClassName("wind")[0].innerHTML = res.win;
       document.getElementsByClassName("activity")[0].innerHTML = res.air_tips;
+      document.getElementsByClassName("current-place")[0].innerHTML = res.city
+      value = res.city
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -75,6 +80,30 @@ window.onload = () => {
         document.getElementsByClassName("body")[i].innerHTML =
           res.data[i].index[i].level;
       }
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const fun4 = async () => {
+    try {
+      const res = await Ajax(
+        "get",
+        `https://yiketianqi.com/api?unescape=1&version=v6&appid=42361885&appsecret=fytXTfe5&city=${value}`
+      );
+      document.getElementsByClassName("temperture")[0].innerHTML =
+        res.tem + "℃";
+      document.getElementsByClassName("weather-case")[0].innerHTML = res.wea;
+      document.getElementsByClassName("wind")[0].innerHTML = res.win;
+      document.getElementsByClassName("activity")[0].innerHTML = res.air_tips;
+      document.getElementsByClassName("current-place")[0].innerHTML = res.city
+      value = res.city
+      const li = document.createElement("li");
+      ul.appendChild(li);
+     console.log(value);
+      li.innerHTML =
+        `<div class ='newvalue'>${value}</div>` +
+        "<div class = 'cha'>&#xe6d5;</div>";
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -136,17 +165,13 @@ window.onload = () => {
     nav3.style.color = "black";
     document.getElementsByClassName("record")[0].style.display = "none";
     fun2();
+    
     input.onclick = () => {
       document.getElementsByClassName("record")[0].style.display = "block";
     };
-    const li = document.createElement("li");
-    ul.appendChild(li);
-    li.innerHTML =
-      `<div class ='newvalue'>${value}</div>` +
-      "<div class = 'cha'>&#xe6d5;</div>";
+   fun4()
     let newVlaue = document.getElementsByClassName("newvalue")
     let cha = document.getElementsByClassName('cha')
-     
     //箭头函数this指向window
     let rul = document.getElementsByClassName('record-ul')[0]
     let rli = document.getElementsByTagName('li')
@@ -170,9 +195,8 @@ window.onload = () => {
       nav1.style.color = "black";
       nav3.style.color = "black";
       document.getElementsByClassName("record")[0].style.display = "none";
-     
       fun2();
     };}
    }, 300);
-  };
+   };
 };
