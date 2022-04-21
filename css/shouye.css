@@ -60,8 +60,8 @@ body {
 .searchbox .record .record-ul {
   list-style: none;
   display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .searchbox .record .record-ul li {
   position: relative;

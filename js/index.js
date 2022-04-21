@@ -1,5 +1,22 @@
 window.onload = () => {
- 
+  function $(x) {
+    let m = x.split("");
+    if (m[0] == ".") {
+      let n = m.slice(1);
+      n = String(n);
+      z = n.replace(/,/g, "");
+      return document.getElementsByClassName(z)[0];
+    }
+    if (m[0] != ".") {
+      return document.getElementById("x");
+    }
+  }
+  $('.search').onmouseout = ()=>{
+      $('.record').style.display = 'none'
+  }
+  $('.record').onmousemove = ()=>{
+    $('.record').style.display = 'block'
+  }
   const input = document.getElementsByTagName("input")[0];
   const mic = document.getElementsByClassName("mic")[0];
   const nav1 = document.getElementsByClassName("nav-1")[0];
